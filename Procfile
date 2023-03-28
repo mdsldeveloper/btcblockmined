@@ -1,0 +1,1 @@
+worker: python mineracao_bitcoin.py
