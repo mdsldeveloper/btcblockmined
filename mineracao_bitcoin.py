@@ -9,9 +9,9 @@ access_token = "YOUR_ACCESS_TOKEN"
 access_token_secret = "YOUR_ACCESS_TOKEN_SECRET"
 
 # Authenticate with Twitter
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+#auth.set_access_token(access_token, access_token_secret)
+#api = tweepy.API(auth)
 
 # Get the latest block data
 url_stats = "https://api.blockchair.com/bitcoin/stats"
