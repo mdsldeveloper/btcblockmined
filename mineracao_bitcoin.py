@@ -62,21 +62,20 @@ while True:
         coinbase_data_string = coinbase_data_string.decode("iso-8859-1")
 
         # Construct the tweet
-        tweet = f'🚀 Novo bloco minerado! 🎉\n\n' \
+        tweet = f'🚀 Block {block} mined! 🎉\n\n' \
              f'BTC in circulation: {circulation} of 21,000,000 ({percent_mined}%)\n' \
              f'BTC remaining: {btc_remaining} BTC ({percent_remaining}%)\n' \
-             f'Block: {block}\n' \
              f'Time: {block_time}\n' \
              f'Miner: {guessed_miner}\n' \
              f'Number of transactions: {transaction_count}\n' \
              f'Total fee: {fee_total} BTC | {fee_total_usd} USD\n' \
              f'Average fee by transaction: {avr_by_transaction} BTC | {avr_by_transaction_usd} USD\n' \
              f'BTC genereted: {generation} BTC | {generation_usd} USD\n' \
-             f'Next Halving: {next_generation_time} > {next_generation_btc} BTC\n' \
              f'Difficulty: {difficulty}\n' \
+             f'Next Halving: {next_generation_time} > {next_generation_btc} BTC by Block\n' \
              f'Coinbase data: {coinbase_data_string}'
         print(tweet)
         # Send the tweet
         # api.update_status(tweet) 
-    # Wait for 5 minutes
-    time.sleep(60)
+    # Wait for 2 minutes
+    time.sleep(12)
