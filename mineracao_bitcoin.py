@@ -1,7 +1,7 @@
 import requests
 import time
 import tweepy
-import datetime
+from datetime import datetime, timedelta
 
 # Twitter API keys
 consumer_key = "YOUR_CONSUMER_KEY"
@@ -53,7 +53,9 @@ while True:
         generation = block_data["generation"]/100000000
         generation_usd = "{:,.2f}".format(block_data["generation_usd"])
         next_generation_btc = (block_data["generation"]/100000000)/2
-        next_generation_minutes = (840000-block)*10
+        now = datetime.now()
+        next_generation_time = now + timedelta(minutes=((840000-block)*10))
+        next_generation_time = next_generation_time.strftime("%d/%m/%Y %H:%M")
         difficulty = "{:,.0f}".format(block_data["difficulty"])
         coinbase_data = block_data["coinbase_data_hex"]
         coinbase_data_string = bytes.fromhex(coinbase_data)
@@ -70,7 +72,7 @@ while True:
              f'Total fee: {fee_total} BTC | {fee_total_usd} USD\n' \
              f'Average fee by transaction: {avr_by_transaction} BTC | {avr_by_transaction_usd} USD\n' \
              f'BTC genereted: {generation} BTC | {generation_usd} USD\n' \
-             f'Next Halving: {next_generation_minutes} | {next_generation_btc} BTC\n' \
+             f'Next Halving: {next_generation_time} > {next_generation_btc} BTC\n' \
              f'Difficulty: {difficulty}\n' \
              f'Coinbase data: {coinbase_data_string}'
         print(tweet)
