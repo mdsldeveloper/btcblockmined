@@ -32,7 +32,7 @@ while True:
     stats_data = response_stats["data"]
 
     # Check if a new block has been mined
-    if new_block_data["id"] == block_data["id"]:
+    if new_block_data["id"] != block_data["id"]:
 
         # Update the block data
         block_data = new_block_data
@@ -78,4 +78,4 @@ while True:
         # Send the tweet
         # api.update_status(tweet) 
     # Wait for 2 minutes
-    time.sleep(12)
+    time.sleep(120)
