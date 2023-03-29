@@ -32,7 +32,7 @@ while True:
     stats_data = response_stats["data"]
 
     # Check if a new block has been mined
-    if new_block_data["id"] != block_data["id"]:
+    if new_block_data["id"] == block_data["id"]:
 
         # Update the block data
         block_data = new_block_data
