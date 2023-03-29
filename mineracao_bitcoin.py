@@ -19,7 +19,7 @@ url_stats = "https://api.blockchair.com/bitcoin/stats"
 
 url = "https://api.blockchair.com/bitcoin/blocks?limit=1"
 response = requests.get(url).json()
-block_data = response["data"][0]
+block_data = response["data"]
 
 # Loop indefinitely to check for new blocks every 5 minutes
 while True:
@@ -29,7 +29,7 @@ while True:
     new_block_data = response["data"]
 
     response_stats = requests.get(url_stats).json()
-    stats_data = response_stats["data"][0]
+    stats_data = response_stats["data"]
 
     # Check if a new block has been mined
     if new_block_data["id"] != block_data["id"]:
