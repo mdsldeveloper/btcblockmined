@@ -77,5 +77,5 @@ while True:
         print(tweet)
         # Send the tweet
         # api.update_status(tweet) 
-    # Wait for 2 minutes
-    time.sleep(120)
+    # Wait for 1 minutes
+    time.sleep(60)
